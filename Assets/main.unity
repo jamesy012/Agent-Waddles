@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 60649509}
   - component: {fileID: 60649508}
   - component: {fileID: 60649507}
+  - component: {fileID: 60649510}
   m_Layer: 0
   m_Name: Agent_Waddles
   m_TagString: Player
@@ -256,6 +257,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60649505}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &60649510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 60649505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3e79bcedc7d254faaffc5c8f8abafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &243984300
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +280,7 @@ GameObject:
   - component: {fileID: 243984303}
   - component: {fileID: 243984302}
   - component: {fileID: 243984301}
+  - component: {fileID: 243984306}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -343,6 +356,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &243984306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243984300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a707e485f4d8ee428abec3666bdf963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 60649506}
+  distance: 5
+  xSpeed: 120
+  ySpeed: 120
+  yMinLimit: 0
+  yMaxLimit: 80
+  distanceMin: 5
+  distanceMax: 5
 --- !u!1 &1472842794
 GameObject:
   m_ObjectHideFlags: 0
