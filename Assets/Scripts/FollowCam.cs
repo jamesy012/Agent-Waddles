@@ -12,6 +12,7 @@ public class FollowCam : MonoBehaviour
     float y;
     void Start()
     {
+        
         offset = target.transform.position - transform.position;
     }
 
