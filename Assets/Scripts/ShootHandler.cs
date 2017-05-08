@@ -20,21 +20,18 @@ public class ShootHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isAiming = false;
-        Quaternion desiredRotation;
+        
+        
         if (Input.GetButton("Fire2"))
         {
             isAiming = true;
         }
-        if (isAiming)
-        {
-            desiredRotation = Camera.main.transform.rotation * Quaternion.Euler(m_ShootCameraOffsetRotation);
-            m_ShootArm.rotation = Quaternion.RotateTowards(m_ShootArm.rotation, desiredRotation, Time.deltaTime * m_ArmRotationSpeed);
-        }
         else
         {
-            m_ShootArm.localRotation = Quaternion.RotateTowards(m_ShootArm.localRotation, m_StartingRot, Time.deltaTime * m_ArmRotationSpeed);
+            isAiming = false;
         }
+
+
 
 
       
@@ -43,23 +40,37 @@ public class ShootHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Vector3 bulletTrajectory;
+        Quaternion desiredRotation;
         if (isAiming)
         {
+            bulletTrajectory = Camera.main.transform.forward;
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward * 1000, out hit))
+            {
+
+                bulletTrajectory = hit.point - m_ShootPoint.position;
+
+                
+            }
+
+            desiredRotation = Quaternion.LookRotation(bulletTrajectory.normalized) * Quaternion.Euler(m_ShootCameraOffsetRotation);
+            m_ShootArm.rotation = Quaternion.RotateTowards(m_ShootArm.rotation, desiredRotation, Time.deltaTime * m_ArmRotationSpeed);
 
             Debug.DrawRay(m_ShootPoint.position, m_ShootPoint.forward * 1000, Color.green);
             if (Input.GetButtonDown("Fire1"))
             {
-                Vector3 bulletTrajectory = m_ShootPoint.forward;
-                RaycastHit hit;
-                if (Physics.Raycast(Camera.main.transform.position, m_ShootPoint.forward * 1000, out hit))
-                {
-
-                    bulletTrajectory = hit.point - m_ShootPoint.position;
-                   
-                }
 
                 Debug.DrawRay(m_ShootPoint.position, bulletTrajectory * 1000, Color.red, 5);
+
+
             }
+          
+
+        }
+        else
+        {
+            m_ShootArm.localRotation = Quaternion.RotateTowards(m_ShootArm.localRotation, m_StartingRot, Time.deltaTime * m_ArmRotationSpeed);
         }
     }
 }
