@@ -5,12 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Vector3 movement;
-    Rigidbody m_rigidBody;
+    CharacterController m_characterController;
     public float m_speed;
     // Use this for initialization
     void Start()
     {
-        m_rigidBody = this.GetComponent<Rigidbody>();
+        m_characterController = this.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         movement.y = 0;
-        m_rigidBody.velocity = (movement * m_speed);
+
+        m_characterController.Move(movement.normalized * m_speed);
     }
 }
