@@ -21,11 +21,12 @@ public class Player : MonoBehaviour
 
         this.transform.Rotate(new Vector3(0, rotationX, 0), Space.Self);
 
-        movement = -this.transform.forward * Input.GetAxis("Horizontal") + this.transform.right * Input.GetAxis("Vertical");
+        movement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.forward * Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
     {
+        movement.y = 0;
         m_rigidBody.velocity = (movement * m_speed);
     }
 }
