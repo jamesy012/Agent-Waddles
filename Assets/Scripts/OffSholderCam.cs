@@ -74,7 +74,7 @@ public class OffSholderCam : MonoBehaviour
                 rotation.x = 360 - m_MaxXRot;
             }
         }
-        transform.rotation = m_Target.rotation * Quaternion.Euler(rotation);
+        transform.rotation =/* m_Target.rotation * */Quaternion.Euler(rotation);
 
         float distance = m_Distance;
 

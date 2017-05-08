@@ -18,9 +18,13 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        float rotationX = Input.GetAxis("Mouse X") * 5;
+        //float rotationX = Input.GetAxis("Mouse X") * 5;
 
-        this.transform.Rotate(new Vector3(0, rotationX, 0), Space.Self);
+        //this.transform.Rotate(new Vector3(0, rotationX, 0), Space.Self);
+
+        Vector3 camDir = Camera.main.transform.forward;
+        camDir.y = 0;
+        transform.rotation = Quaternion.LookRotation(camDir);
 
         movement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.forward * Input.GetAxis("Vertical");
     }
