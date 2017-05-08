@@ -44,7 +44,7 @@ public class ShootHandler : MonoBehaviour
         Quaternion desiredRotation;
         if (isAiming)
         {
-            bulletTrajectory = Camera.main.transform.forward;
+            bulletTrajectory = Camera.main.transform.forward*1000 - m_ShootPoint.position;
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward * 1000, out hit))
             {

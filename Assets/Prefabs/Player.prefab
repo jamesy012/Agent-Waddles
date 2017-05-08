@@ -89,7 +89,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4260947534923114}
   - component: {fileID: 33693580007719580}
-  - component: {fileID: 65315560171695228}
   - component: {fileID: 23964368116136158}
   m_Layer: 0
   m_Name: Gun
@@ -247,7 +246,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4405492788604882}
   - component: {fileID: 33331925920431834}
-  - component: {fileID: 65323463318884460}
   - component: {fileID: 23762544644935464}
   m_Layer: 0
   m_Name: Barrel
@@ -490,14 +488,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1240926500229296}
-  m_LocalRotation: {x: 0.023305744, y: 0.7067226, z: -0.7067226, w: 0.023305744}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: -0.13, y: -0.35714284, z: -0.67}
   m_LocalScale: {x: 0.2510853, y: 0.9978311, z: 0.14285724}
   m_Children:
   - {fileID: 4405492788604882}
   m_Father: {fileID: 4579664672668970}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: -86.22201}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -180}
 --- !u!4 &4293641777838280
 Transform:
   m_ObjectHideFlags: 1
@@ -1594,30 +1592,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65315560171695228
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1240926500229296}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65323463318884460
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1710023953937032}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65372688042075790
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1661,7 +1635,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1469112584179534}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c6e18616ecf2fe84f8024e46eb4b907c, type: 2}
   m_CullingMode: 0
@@ -1698,7 +1672,7 @@ MonoBehaviour:
   m_ShootPoint: {fileID: 4073964035068686}
   m_ShootArm: {fileID: 4579664672668970}
   m_ShootCameraOffsetRotation: {x: 90, y: -180, z: 0}
-  m_ArmRotationSpeed: 5
+  m_ArmRotationSpeed: 500
 --- !u!136 &136166016536126160
 CapsuleCollider:
   m_ObjectHideFlags: 1
