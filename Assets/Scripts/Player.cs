@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    Vector3 movement;
+    Rigidbody m_rigidBody;
+    public float m_speed;
     // Use this for initialization
     void Start()
     {
-
+        m_rigidBody = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        float rotationX = Input.GetAxis("Mouse X") * 5;
+
+        this.transform.Rotate(new Vector3(0, rotationX, 0), Space.Self);
+
+        movement = this.transform.forward * Input.GetAxis("Horizontal") + this.transform.right * Input.GetAxis("Vertical");
+    }
+
+    private void FixedUpdate()
+    {
+        m_rigidBody.velocity = (movement * m_speed);
     }
 }

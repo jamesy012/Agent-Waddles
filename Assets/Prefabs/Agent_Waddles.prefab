@@ -56,7 +56,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4454811291036414}
   - component: {fileID: 33950245884307218}
-  - component: {fileID: 65607975688141166}
   - component: {fileID: 23245532237814712}
   m_Layer: 0
   m_Name: LeftFoot
@@ -183,7 +182,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4893756450943466}
   - component: {fileID: 33486929801334042}
-  - component: {fileID: 65193925464570874}
   - component: {fileID: 23610370610853818}
   m_Layer: 0
   m_Name: RightFoot
@@ -875,36 +873,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65193925464570874
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1930452584416602}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65418093339992604
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1597471463751728}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65607975688141166
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1429797134011510}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -951,6 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3e79bcedc7d254faaffc5c8f8abafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_speed: 0
 --- !u!135 &135180068917883072
 SphereCollider:
   m_ObjectHideFlags: 1
