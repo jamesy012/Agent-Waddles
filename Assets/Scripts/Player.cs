@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     CharacterController m_characterController;
     public float m_speed;
     public bool m_walking;
+    public bool m_jumping;
     // Use this for initialization
     void Start()
     {
@@ -17,10 +18,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //m_jumping = false;
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            m_jumping = true;
+        }
 
-        //float rotationX = Input.GetAxis("Mouse X") * 5;
-
-        //this.transform.Rotate(new Vector3(0, rotationX, 0), Space.Self);
 
         Vector3 camDir = Camera.main.transform.forward;
         camDir.y = 0;
@@ -43,5 +46,7 @@ public class Player : MonoBehaviour
         }
 
         m_characterController.Move(movement.normalized * m_speed);
+
+        
     }
 }
