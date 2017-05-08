@@ -55,26 +55,26 @@ public class OffSholderCam : MonoBehaviour
         mouseMovement.x = Mathf.Clamp(mouseMovement.x, -m_MaxXRot, m_MaxXRot);
 
 
+        //transform.rotation = Quaternion.Euler(mouseMovement);
+        //Vector3 rotation = transform.rotation.eulerAngles;
+        //rotation.z = 0;
+        ////rotation.x = rotation.x > 80 ? 80 : rotation.x < -80 ? -80 : rotation.x;
+        ////this may not be nessary anymore since i am adding the rotations in a different way now
+        //if (rotation.x < 180)
+        //{
+        //    if (rotation.x > m_MaxXRot)
+        //    {
+        //        rotation.x = m_MaxXRot;
+        //    }
+        //}
+        //else
+        //{
+        //    if (rotation.x < 360 - m_MaxXRot)
+        //    {
+        //        rotation.x = 360 - m_MaxXRot;
+        //    }
+        //}
         transform.rotation = Quaternion.Euler(mouseMovement);
-        Vector3 rotation = transform.rotation.eulerAngles;
-        rotation.z = 0;
-        //rotation.x = rotation.x > 80 ? 80 : rotation.x < -80 ? -80 : rotation.x;
-        //this may not be nessary anymore since i am adding the rotations in a different way now
-        if (rotation.x < 180)
-        {
-            if (rotation.x > m_MaxXRot)
-            {
-                rotation.x = m_MaxXRot;
-            }
-        }
-        else
-        {
-            if (rotation.x < 360 - m_MaxXRot)
-            {
-                rotation.x = 360 - m_MaxXRot;
-            }
-        }
-        transform.rotation =/* m_Target.rotation * */Quaternion.Euler(rotation);
 
         float distance = m_Distance;
 
