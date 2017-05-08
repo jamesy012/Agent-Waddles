@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 136121142015529552}
   - component: {fileID: 23636516876324666}
   - component: {fileID: 114118703883078032}
+  - component: {fileID: 95977198487531720}
   m_Layer: 0
   m_Name: Agent_Waddles
   m_TagString: Player
@@ -922,6 +923,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95977198487531720
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746434832688808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6e18616ecf2fe84f8024e46eb4b907c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114118703883078032
 MonoBehaviour:
   m_ObjectHideFlags: 1
