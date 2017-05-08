@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     Vector3 movement;
     CharacterController m_characterController;
     public float m_speed;
+    public bool m_walking;
     // Use this for initialization
     void Start()
     {
@@ -27,6 +28,15 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         movement.y = 0;
+
+        if(movement.sqrMagnitude != 0.0f)
+        {
+            m_walking = true;
+        }
+        else
+        {
+            m_walking = false;
+        }
 
         m_characterController.Move(movement.normalized * m_speed);
     }
