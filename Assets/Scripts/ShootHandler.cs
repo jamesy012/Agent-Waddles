@@ -25,10 +25,10 @@ public class ShootHandler : MonoBehaviour {
 		}
 		if (isAiming) {
 			desiredRotation = Camera.main.transform.rotation * Quaternion.Euler(m_ShootCameraOffsetRotation);
+			m_ShootArm.rotation = Quaternion.Slerp(m_ShootArm.rotation, desiredRotation, Time.deltaTime * m_ArmRotationSpeed);
 		} else {
-			desiredRotation = m_StartingRot;
+			m_ShootArm.localRotation = Quaternion.Slerp(m_ShootArm.localRotation, m_StartingRot, Time.deltaTime * m_ArmRotationSpeed);
 		}
-		m_ShootArm.rotation = Quaternion.Slerp(m_ShootArm.rotation, desiredRotation, Time.deltaTime * m_ArmRotationSpeed);
 
 
 		if (isAiming) {
