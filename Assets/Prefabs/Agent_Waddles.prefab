@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 23636516876324666}
   - component: {fileID: 114118703883078032}
   - component: {fileID: 95977198487531720}
+  - component: {fileID: 54844786679893170}
   m_Layer: 0
   m_Name: Agent_Waddles
   m_TagString: Player
@@ -246,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746434832688808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.97, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4441155079687246}
@@ -849,6 +850,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429797134011510}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54844786679893170
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746434832688808}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!65 &65079690610093250
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -904,12 +920,12 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746434832688808}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c6e18616ecf2fe84f8024e46eb4b907c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -925,7 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3e79bcedc7d254faaffc5c8f8abafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 0
+  m_speed: 10
 --- !u!135 &135180068917883072
 SphereCollider:
   m_ObjectHideFlags: 1
