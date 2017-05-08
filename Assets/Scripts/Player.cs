@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 
         this.transform.Rotate(new Vector3(0, rotationX, 0), Space.Self);
 
-        movement = this.transform.forward * Input.GetAxis("Horizontal") + this.transform.right * Input.GetAxis("Vertical");
+        movement = -this.transform.forward * Input.GetAxis("Horizontal") + this.transform.right * Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
