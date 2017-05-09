@@ -23,6 +23,7 @@ public class HitmanCamera : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		m_DesiredRotation = transform.rotation;
+        Cursor.lockState = CursorLockMode.Locked;
 	}
 
 	// Update is called once per frame

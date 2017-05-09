@@ -70,23 +70,24 @@ public class Player : MonoBehaviour
 
 
 
-        Vector3 camDir = Camera.main.transform.forward;
-        camDir.y = 0;
+
 
         if (m_prone)
         {
-            Vector3 proneMovement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.up * Input.GetAxis("Vertical");
-            m_rigidBody.transform.localRotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, m_proneRotation, 10);
-            m_rigidBody.transform.up = camDir;
 
-            m_rigidBody.AddForce(proneMovement.normalized * m_speed);
+            m_collider.direction = 2;
+
         }
         else
         {
-
-            m_rigidBody.transform.rotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, Quaternion.LookRotation(camDir), 10);
-            m_rigidBody.AddForce(movement.normalized * m_speed);
+            m_collider.direction = 1;
+     
         }
+
+        Vector3 camDir = Camera.main.transform.forward;
+        camDir.y = 0;
+        m_rigidBody.transform.rotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, Quaternion.LookRotation(camDir), 10);
+        m_rigidBody.AddForce(movement.normalized * m_speed);
     }
 
     void GoProne()

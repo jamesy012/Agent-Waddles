@@ -146,7 +146,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 47527636}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba92fb44336020f40bdf294bb66bc9da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -211,20 +211,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 54429473987636750, guid: 01f847eb371c5e541a54268e45641a85,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114422040914510216, guid: 01f847eb371c5e541a54268e45641a85,
-        type: 2}
-      propertyPath: m_jumpForce
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 65709535499471338, guid: 01f847eb371c5e541a54268e45641a85, type: 2}
-    - {fileID: 65780642143700854, guid: 01f847eb371c5e541a54268e45641a85, type: 2}
-    - {fileID: 65372688042075790, guid: 01f847eb371c5e541a54268e45641a85, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01f847eb371c5e541a54268e45641a85, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &772829644
@@ -582,6 +569,17 @@ Prefab:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 801561886}
-    m_RemovedComponents: []
+    - target: {fileID: 114365797576647926, guid: 95f6330e0225e0a48893d10250b7c6ae,
+        type: 2}
+      propertyPath: m_Target
+      value: 
+      objectReference: {fileID: 801561886}
+    - target: {fileID: 114365797576647926, guid: 95f6330e0225e0a48893d10250b7c6ae,
+        type: 2}
+      propertyPath: m_ZoomDistance
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114607769004832592, guid: 95f6330e0225e0a48893d10250b7c6ae, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 95f6330e0225e0a48893d10250b7c6ae, type: 2}
   m_IsPrefabParent: 0

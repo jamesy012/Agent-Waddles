@@ -71,7 +71,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4517584378175192}
   - component: {fileID: 33682531536807552}
-  - component: {fileID: 65372688042075790}
   - component: {fileID: 23061696293466520}
   m_Layer: 0
   m_Name: TieTail
@@ -123,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4353034541945654}
   - component: {fileID: 33660627813354324}
-  - component: {fileID: 65780642143700854}
   - component: {fileID: 23820723403797560}
   m_Layer: 0
   m_Name: Tie
@@ -329,7 +327,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4516264750953466}
   - component: {fileID: 33779017875439324}
-  - component: {fileID: 65709535499471338}
   - component: {fileID: 23768317120590088}
   m_Layer: 0
   m_Name: TieKnot
@@ -1580,42 +1577,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65372688042075790
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1214001696318686}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65709535499471338
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1885231273395816}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65780642143700854
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1352691805918436}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95353328872209670
 Animator:
   serializedVersion: 3
@@ -1644,10 +1605,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3e79bcedc7d254faaffc5c8f8abafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_jumpForce: 10
   m_speed: 10
   m_walking: 0
   m_jumping: 0
   m_prone: 0
+  m_grounded: 0
 --- !u!114 &114525234104983196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1742,7 +1705,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1999500133
+  randomSeed: 1873725746
   InitialModule:
     serializedVersion: 3
     enabled: 1

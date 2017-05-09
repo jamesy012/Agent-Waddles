@@ -15,7 +15,10 @@ public class AnimationHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.W))
+
+        float mouseX = Input.GetAxis("Mouse X");
+
+        if(Input.GetKey(KeyCode.W) || mouseX != 0.0f)
         {
             m_animator.SetBool("WalkingForward", true);
         }
@@ -51,5 +54,11 @@ public class AnimationHandler : MonoBehaviour
             m_animator.SetBool("SideStepLeft", false);
         }
 
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            m_prone ^= true;
+            m_animator.SetBool("Prone", m_prone);
+        }
     }
 }
