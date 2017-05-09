@@ -87,10 +87,10 @@ public class HitmanCamera : MonoBehaviour {
 	}
 
 	public void OnDrawGizmosSelected() {
-		//float gizmoSize = 0.25f;
-		//Gizmos.color = Color.red;
-		//Gizmos.DrawSphere(calcOffsetPos(), gizmoSize);
-		//Gizmos.DrawLine(calcOffsetPos(), calcDesiredPos());
-		//Gizmos.DrawSphere(calcDesiredPos(), gizmoSize);
-	}
+        float gizmoSize = 0.25f;
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(calcOffsetPos(), gizmoSize);
+        Gizmos.DrawLine(calcOffsetPos(), calcDesiredPos());
+        Gizmos.DrawSphere(calcDesiredPos(), gizmoSize);
+    }
 }

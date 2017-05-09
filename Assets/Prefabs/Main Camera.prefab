@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 92591989150036838}
   - component: {fileID: 124014994323149360}
   - component: {fileID: 81194467790972078}
-  - component: {fileID: 114607769004832592}
   - component: {fileID: 114365797576647926}
   m_Layer: 0
   m_Name: Main Camera
@@ -55,7 +54,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1770687822758982}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.252, y: 1.975, z: -2.643}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -179,30 +178,8 @@ MonoBehaviour:
   m_Target: {fileID: 0}
   m_Offset: {x: 1, y: 1, z: 0}
   m_Distance: 4
-  m_ZoomDistance: 0
+  m_ZoomDistance: 1
   m_RotateSpeedScale: {x: 5, y: 5}
---- !u!114 &114607769004832592
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1770687822758982}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ea20fd5e36d1347b0414981832eb82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_Offset: {x: 1, y: 1, z: -3}
-  m_proneOffset: {x: 1, y: -3, z: 0}
-  m_MaxXRot: 75
-  m_Distance: 0
-  m_DistanceScale: {x: 1, y: 1, z: 1}
-  m_RotateSpeedScale: {x: 1, y: 1}
-  m_RotateSpeedScaleGunOut: {x: 1, y: 1}
-  m_InvertY: 1
-  m_StopCameraInput: 0
-  mouseMovement: {x: 0, y: 0, z: 0}
 --- !u!124 &124014994323149360
 Behaviour:
   m_ObjectHideFlags: 1
