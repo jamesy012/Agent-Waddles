@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
         {
             Vector3 proneMovement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.up * Input.GetAxis("Vertical");
             m_rigidBody.transform.localRotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, m_proneRotation , 10);
-            //m_rigidBody.transform.up = camDir;
+            m_rigidBody.transform.up = camDir;
             m_rigidBody.AddForce(proneMovement.normalized * m_speed);
         }
         else
