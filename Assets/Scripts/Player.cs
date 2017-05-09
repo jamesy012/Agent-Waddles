@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
        
-        m_grounded = Physics.Raycast(this.transform.position , Vector3.down,1.05f);
+        m_grounded = Physics.Raycast(this.transform.position , Vector3.down,1.01f);
         Debug.DrawRay(this.transform.position , Vector3.down *2, Color.cyan);
 
         movement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.forward * Input.GetAxis("Vertical");
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
             m_jumping = false;
         }
 
-        if(m_grounded)
+        if (m_grounded && !m_prone)
         {
             m_rigidBody.velocity = Vector3.zero;
         }
@@ -85,14 +85,14 @@ public class Player : MonoBehaviour
        
         if (m_prone)
         {
-
+            Vector3 proneMovement =  this.transform.forward * Input.GetAxis("Vertical");
             m_collider.direction = 2;
-            m_rigidBody.velocity = (movement.normalized * m_proneSpeed);
+            m_rigidBody.AddForce (proneMovement.normalized * m_proneSpeed);
         }
         else
         {
             m_collider.direction = 1;
-            m_rigidBody.velocity = (movement.normalized * m_waddleSpeed);
+            m_rigidBody.AddForce (movement.normalized * m_waddleSpeed);
 
         }
 

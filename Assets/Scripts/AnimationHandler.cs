@@ -18,7 +18,7 @@ public class AnimationHandler : MonoBehaviour
 
         float mouseX = Input.GetAxis("Mouse X");
 
-        if(Input.GetKey(KeyCode.W) || mouseX != 0.0f)
+        if(Input.GetKey(KeyCode.W) || Mathf.Abs(mouseX) > 0.5f)
         {
             m_animator.SetBool("WalkingForward", true);
         }

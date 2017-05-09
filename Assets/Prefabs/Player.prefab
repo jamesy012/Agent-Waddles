@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4589980899056430}
   - component: {fileID: 33144867085531990}
   - component: {fileID: 23729083124759098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftFlipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4677052866296438}
   - component: {fileID: 33303518738311708}
   - component: {fileID: 23695844207890996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeakTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4118844327505114}
   - component: {fileID: 33483918792320314}
   - component: {fileID: 23488199101935950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightPupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4517584378175192}
   - component: {fileID: 33682531536807552}
   - component: {fileID: 23061696293466520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TieTail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4260947534923114}
   - component: {fileID: 33693580007719580}
   - component: {fileID: 23964368116136158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4309942006938490}
   - component: {fileID: 33882985066824164}
   - component: {fileID: 23979809754366124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightEyeBrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4353034541945654}
   - component: {fileID: 33660627813354324}
   - component: {fileID: 23820723403797560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 114560856265145148}
   - component: {fileID: 54429473987636750}
   - component: {fileID: 136077157326834324}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 4652495337552038}
   - component: {fileID: 33894710791161542}
   - component: {fileID: 23098576226304724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,9 +179,9 @@ GameObject:
   - component: {fileID: 23732781262618268}
   - component: {fileID: 95353328872209670}
   - component: {fileID: 114525234104983196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Agent_Waddles
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 4921014721761974}
   - component: {fileID: 33510450555442796}
   - component: {fileID: 23710057547640450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftPupil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4073964035068686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 4893541304756528}
   - component: {fileID: 33389003337308248}
   - component: {fileID: 23964001786583988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 4405492788604882}
   - component: {fileID: 33331925920431834}
   - component: {fileID: 23762544644935464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 4579664672668970}
   - component: {fileID: 33483995349835786}
   - component: {fileID: 23051481026490460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightFlipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4564712332469452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 4529867529839462}
   - component: {fileID: 33118065542699374}
   - component: {fileID: 23599900742511736}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftEyeBrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 4366838554602980}
   - component: {fileID: 33726464754447090}
   - component: {fileID: 23838723259927408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeakBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 4516264750953466}
   - component: {fileID: 33779017875439324}
   - component: {fileID: 23768317120590088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TieKnot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 4670805940701434}
   - component: {fileID: 33173746546035378}
   - component: {fileID: 23777149396409922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cigar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 4859429283651578}
   - component: {fileID: 33074995638223996}
   - component: {fileID: 23300592869177968}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Belly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 4139385256972648}
   - component: {fileID: 33426116821950200}
   - component: {fileID: 23384514840174744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 4109832026159388}
   - component: {fileID: 33885215799514576}
   - component: {fileID: 23141452931182296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 23849714932415508}
   - component: {fileID: 198661841784810038}
   - component: {fileID: 199040705899507978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CigarLit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1606,7 +1606,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_jumpForce: 10
-  m_speed: 10
+  m_waddleSpeed: 300
+  m_proneSpeed: 20
   m_walking: 0
   m_jumping: 0
   m_prone: 0
