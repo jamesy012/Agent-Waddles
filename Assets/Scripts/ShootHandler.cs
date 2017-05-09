@@ -53,7 +53,7 @@ public class ShootHandler : MonoBehaviour
         {
             bulletTrajectory = Camera.main.transform.forward*1000 - m_ShootPoint.position;
             RaycastHit hit;
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward * 1000, out hit))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward * 1000, out hit,1000, LayerMask.NameToLayer("Player")))
             {
 
                 bulletTrajectory = hit.point - m_ShootPoint.position;

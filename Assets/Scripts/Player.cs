@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     Vector3 movement;
     Rigidbody m_rigidBody;
-    Quaternion m_proneRotation;
+
     public float m_jumpForce = 5;
  
     public float m_waddleSpeed = 300;
@@ -17,14 +17,15 @@ public class Player : MonoBehaviour
     public bool m_prone;
     public bool m_grounded;
 
+    private Vector3 m_currGroundNormal;
+
     private CapsuleCollider m_collider;
     // Use this for initialization
     void Start()
     {
-        m_proneRotation = Quaternion.LookRotation(-this.transform.up);
         m_collider = this.GetComponent<CapsuleCollider>();
         m_rigidBody = this.GetComponent<Rigidbody>();
-
+        m_currGroundNormal = this.transform.up;
     }
 
     // Update is called once per frame
@@ -48,8 +49,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        m_grounded = Physics.Raycast(this.transform.position, Vector3.down, 1.01f);
+        RaycastHit hit;
+        m_grounded = Physics.Raycast(this.transform.position, Vector3.down,out hit, 1.01f);
         Debug.DrawRay(this.transform.position, Vector3.down * 2, Color.cyan);
 
         movement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.forward * Input.GetAxis("Vertical");
@@ -78,9 +79,6 @@ public class Player : MonoBehaviour
             m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
             m_jumping = false;
         }
-
-
-
 
 
 
@@ -114,6 +112,9 @@ public class Player : MonoBehaviour
 
 
     }
+
+
+
 
 
 }
