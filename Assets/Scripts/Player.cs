@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     Rigidbody m_rigidBody;
     public float m_jumpForce = 5;
     Quaternion m_proneRotation;
-    public float m_speed;
+    public float m_waddleSpeed;
+    public float m_proneSpeed;
     public bool m_walking;
     public bool m_jumping;
     public bool m_prone;
@@ -18,9 +19,10 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        m_collider = this.GetComponent<CapsuleCollider>();
         m_proneRotation = Quaternion.LookRotation(-this.transform.up);
+        m_collider = this.GetComponent<CapsuleCollider>();
         m_rigidBody = this.GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -39,14 +41,16 @@ public class Player : MonoBehaviour
 
 
 
-        movement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.forward * Input.GetAxis("Vertical");
+        
     }
 
     private void FixedUpdate()
     {
-        m_grounded = Physics.Raycast(this.transform.position , Vector3.down,2);
+       
+        m_grounded = Physics.Raycast(this.transform.position , Vector3.down,1.05f);
         Debug.DrawRay(this.transform.position , Vector3.down *2, Color.cyan);
 
+        movement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.forward * Input.GetAxis("Vertical");
         movement.y = 0;
 
         if (movement.sqrMagnitude != 0.0f)
@@ -67,30 +71,33 @@ public class Player : MonoBehaviour
             m_jumping = false;
         }
 
+        if(m_grounded)
+        {
+            m_rigidBody.velocity = Vector3.zero;
+        }
 
 
 
 
-
+        Vector3 camDir = Camera.main.transform.forward;
+        camDir.y = 0;
+        this.transform.rotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, Quaternion.LookRotation(camDir), 10);
+       
         if (m_prone)
         {
 
             m_collider.direction = 2;
-
+            m_rigidBody.velocity = (movement.normalized * m_proneSpeed);
         }
         else
         {
             m_collider.direction = 1;
-     
+            m_rigidBody.velocity = (movement.normalized * m_waddleSpeed);
+
         }
 
-        Vector3 camDir = Camera.main.transform.forward;
-        camDir.y = 0;
-        m_rigidBody.transform.rotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, Quaternion.LookRotation(camDir), 10);
-        m_rigidBody.AddForce(movement.normalized * m_speed);
+
     }
 
-    void GoProne()
-    {
-    }
+
 }

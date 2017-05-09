@@ -27,7 +27,7 @@ public class HitmanCamera : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update() {
+	void LateUpdate() {
 		updateRotation();
 		updatePosition();
 	}
@@ -44,10 +44,10 @@ public class HitmanCamera : MonoBehaviour {
 		}
 
 
-		mouseMovement.y += Input.GetAxis("Mouse X") * rotateSpeedScale.x;
-		mouseMovement.x += Input.GetAxis("Mouse Y") * -rotateSpeedScale.y;
+        mouseMovement.y = Input.GetAxis("Mouse X") * rotateSpeedScale.x;
+        mouseMovement.x = Input.GetAxis("Mouse Y") * -rotateSpeedScale.y;
 
-		Quaternion mouseMovementQuat = Quaternion.Euler(mouseMovement);
+        Quaternion mouseMovementQuat = Quaternion.Euler(mouseMovement);
 
 		m_DesiredRotation *= mouseMovementQuat;
 
@@ -61,8 +61,8 @@ public class HitmanCamera : MonoBehaviour {
 	void updatePosition() {
 		m_DesiredPosition = calcDesiredPos();
 
-		transform.position = Vector3.Lerp(transform.position, m_DesiredPosition, Time.deltaTime * m_MoveSpeed);
-	}
+		transform.position = Vector3.LerpUnclamped(transform.position, m_DesiredPosition, Time.deltaTime* m_MoveSpeed);
+    }
 
 	private Vector3 calcOffsetPos() {
 		return m_Target.position + m_Target.rotation * m_Offset;
@@ -87,10 +87,10 @@ public class HitmanCamera : MonoBehaviour {
 	}
 
 	public void OnDrawGizmosSelected() {
-		float gizmoSize = 0.25f;
-		Gizmos.color = Color.red;
-		Gizmos.DrawSphere(calcOffsetPos(), gizmoSize);
-		Gizmos.DrawLine(calcOffsetPos(), calcDesiredPos());
-		Gizmos.DrawSphere(calcDesiredPos(), gizmoSize);
+		//float gizmoSize = 0.25f;
+		//Gizmos.color = Color.red;
+		//Gizmos.DrawSphere(calcOffsetPos(), gizmoSize);
+		//Gizmos.DrawLine(calcOffsetPos(), calcDesiredPos());
+		//Gizmos.DrawSphere(calcDesiredPos(), gizmoSize);
 	}
 }
