@@ -107,7 +107,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!23 &47527637
 MeshRenderer:
@@ -172,7 +172,7 @@ Transform:
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &374780286
 Prefab:
@@ -212,6 +212,11 @@ Prefab:
     - target: {fileID: 4822095344290974, guid: 01f847eb371c5e541a54268e45641a85, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 54429473987636750, guid: 01f847eb371c5e541a54268e45641a85,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01f847eb371c5e541a54268e45641a85, type: 2}
@@ -564,29 +569,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4386234452491724, guid: 95f6330e0225e0a48893d10250b7c6ae, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114607769004832592, guid: 95f6330e0225e0a48893d10250b7c6ae,
         type: 2}
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 801561886}
-    - target: {fileID: 114607769004832592, guid: 95f6330e0225e0a48893d10250b7c6ae,
-        type: 2}
-      propertyPath: m_proneOffset.y
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114607769004832592, guid: 95f6330e0225e0a48893d10250b7c6ae,
-        type: 2}
-      propertyPath: m_proneOffset.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114607769004832592, guid: 95f6330e0225e0a48893d10250b7c6ae,
-        type: 2}
-      propertyPath: m_proneOffset.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 135685864092382264, guid: 95f6330e0225e0a48893d10250b7c6ae, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95f6330e0225e0a48893d10250b7c6ae, type: 2}
   m_IsPrefabParent: 0

@@ -60,14 +60,14 @@ public class Player : MonoBehaviour
         if (m_prone)
         {
             Vector3 proneMovement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.up * Input.GetAxis("Vertical");
-            m_rigidBody.transform.localRotation = m_proneRotation;
-            m_rigidBody.transform.up = camDir;
+            m_rigidBody.transform.localRotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, m_proneRotation , 10);
+            //m_rigidBody.transform.up = camDir;
             m_rigidBody.AddForce(proneMovement.normalized * m_speed);
         }
         else
         {
  
-            m_rigidBody.transform.rotation = Quaternion.LookRotation(camDir);
+            m_rigidBody.transform.rotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, Quaternion.LookRotation(camDir), 10) ;
             m_rigidBody.AddForce(movement.normalized * m_speed);
         }
     }
