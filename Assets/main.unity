@@ -183,11 +183,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4822095344290974, guid: 01f847eb371c5e541a54268e45641a85, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.013
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4822095344290974, guid: 01f847eb371c5e541a54268e45641a85, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.005
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4822095344290974, guid: 01f847eb371c5e541a54268e45641a85, type: 2}
       propertyPath: m_LocalPosition.z
@@ -333,7 +333,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cd72a289592281547a07ed824d23152a, type: 2}
+  - {fileID: 2100000, guid: 8add530fdd01332498c032cf7c2a5112, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -571,6 +571,21 @@ Prefab:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 801561886}
+    - target: {fileID: 114607769004832592, guid: 95f6330e0225e0a48893d10250b7c6ae,
+        type: 2}
+      propertyPath: m_proneOffset.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114607769004832592, guid: 95f6330e0225e0a48893d10250b7c6ae,
+        type: 2}
+      propertyPath: m_proneOffset.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114607769004832592, guid: 95f6330e0225e0a48893d10250b7c6ae,
+        type: 2}
+      propertyPath: m_proneOffset.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135685864092382264, guid: 95f6330e0225e0a48893d10250b7c6ae, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 95f6330e0225e0a48893d10250b7c6ae, type: 2}

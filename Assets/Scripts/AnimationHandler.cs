@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour
 {
     private Animator m_animator;
+    bool m_prone = false;
     // Use this for initialization
     void Start()
     {
@@ -49,5 +50,6 @@ public class AnimationHandler : MonoBehaviour
         {
             m_animator.SetBool("SideStepLeft", false);
         }
+
     }
 }

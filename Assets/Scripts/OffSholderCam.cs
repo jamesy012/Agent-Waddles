@@ -7,6 +7,7 @@ public class OffSholderCam : MonoBehaviour
 
     public Transform m_Target;
     public Vector3 m_Offset;
+    public Vector3 m_proneOffset;
 
     public float m_MaxXRot = 75;
 
@@ -20,7 +21,10 @@ public class OffSholderCam : MonoBehaviour
 
     public bool m_StopCameraInput = false;
     public Vector3 mouseMovement;
+   
 
+
+    bool m_prone = false;
     // Use this for initialization
     void Start()
     {
@@ -40,6 +44,10 @@ public class OffSholderCam : MonoBehaviour
             rotateSpeedScale = m_RotateSpeedScale;
         }
 
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            m_prone ^= true;
+        }
 
         if (m_InvertY)
         {
@@ -55,31 +63,20 @@ public class OffSholderCam : MonoBehaviour
         mouseMovement.x = Mathf.Clamp(mouseMovement.x, -m_MaxXRot, m_MaxXRot);
 
 
-        //transform.rotation = Quaternion.Euler(mouseMovement);
-        //Vector3 rotation = transform.rotation.eulerAngles;
-        //rotation.z = 0;
-        ////rotation.x = rotation.x > 80 ? 80 : rotation.x < -80 ? -80 : rotation.x;
-        ////this may not be nessary anymore since i am adding the rotations in a different way now
-        //if (rotation.x < 180)
-        //{
-        //    if (rotation.x > m_MaxXRot)
-        //    {
-        //        rotation.x = m_MaxXRot;
-        //    }
-        //}
-        //else
-        //{
-        //    if (rotation.x < 360 - m_MaxXRot)
-        //    {
-        //        rotation.x = 360 - m_MaxXRot;
-        //    }
-        //}
+
         transform.rotation = Quaternion.Euler(mouseMovement);
 
         float distance = m_Distance;
 
-
-        transform.position = m_Target.transform.position + m_Target.transform.rotation * m_Offset + Vector3.Scale(transform.rotation * -m_Target.forward, m_DistanceScale) * m_Distance;
+        if(m_prone)
+        {
+            transform.position = m_Target.transform.position + m_Target.transform.rotation * m_proneOffset + Vector3.Scale(transform.rotation * -m_Target.forward, m_DistanceScale) * m_Distance;
+        }
+        else
+        {
+            transform.position = m_Target.transform.position + m_Target.transform.rotation * m_Offset + Vector3.Scale(transform.rotation * -m_Target.forward, m_DistanceScale) * m_Distance;
+        }
+        
         //transform.position = m_Target.transform.position + m_Offset + Vector3.Scale(transform.rotation * -m_Target.forward, m_DistanceScale) * m_Distance;
     }
 

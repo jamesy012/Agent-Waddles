@@ -5,14 +5,20 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Vector3 movement;
-    CharacterController m_characterController;
+    Rigidbody m_rigidBody;
+
+    Quaternion m_proneRotation;
     public float m_speed;
     public bool m_walking;
     public bool m_jumping;
+    public bool m_prone;
+
+   
     // Use this for initialization
     void Start()
     {
-        m_characterController = this.GetComponent<CharacterController>();
+        m_proneRotation = Quaternion.LookRotation(-this.transform.up);
+        m_rigidBody = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -23,11 +29,12 @@ public class Player : MonoBehaviour
         {
             m_jumping = true;
         }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            m_prone ^= true;
+        }
 
-
-        Vector3 camDir = Camera.main.transform.forward;
-        camDir.y = 0;
-        transform.rotation = Quaternion.LookRotation(camDir);
+   
 
         movement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.forward * Input.GetAxis("Vertical");
     }
@@ -45,8 +52,27 @@ public class Player : MonoBehaviour
             m_walking = false;
         }
 
-        m_characterController.Move(movement.normalized * m_speed);
 
-        
+
+        Vector3 camDir = Camera.main.transform.forward;
+        camDir.y = 0;
+
+        if (m_prone)
+        {
+            Vector3 proneMovement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.up * Input.GetAxis("Vertical");
+            m_rigidBody.transform.localRotation = m_proneRotation;
+            m_rigidBody.transform.up = camDir;
+            m_rigidBody.AddForce(proneMovement.normalized * m_speed);
+        }
+        else
+        {
+ 
+            m_rigidBody.transform.rotation = Quaternion.LookRotation(camDir);
+            m_rigidBody.AddForce(movement.normalized * m_speed);
+        }
+    }
+
+    void GoProne()
+    {
     }
 }
