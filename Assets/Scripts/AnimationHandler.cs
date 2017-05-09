@@ -22,5 +22,32 @@ public class AnimationHandler : MonoBehaviour
         {
             m_animator.SetBool("WalkingForward", false);
         }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            m_animator.SetBool("WalkingBackward", true);
+        }
+        else
+        {
+            m_animator.SetBool("WalkingBackward", false);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            m_animator.SetBool("SideStepRight", true);
+        }
+        else
+        {
+            m_animator.SetBool("SideStepRight", false);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            m_animator.SetBool("SideStepLeft", true);
+        }
+        else
+        {
+            m_animator.SetBool("SideStepLeft", false);
+        }
     }
 }
