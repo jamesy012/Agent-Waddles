@@ -40,7 +40,14 @@ public class ShootHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 bulletTrajectory;
+
+		Vector3 position = Camera.main.transform.position;
+		Vector3 forward = Camera.main.transform.forward;
+		//Vector3 position = m_ShootPoint.position;
+		//Vector3 forward = m_ShootPoint.forward;
+		forward *= 1000;
+
+		Vector3 bulletTrajectory;
         Quaternion desiredRotation;
         if (isAiming)
         {
@@ -57,11 +64,11 @@ public class ShootHandler : MonoBehaviour
             desiredRotation = Quaternion.LookRotation(bulletTrajectory.normalized) * Quaternion.Euler(m_ShootCameraOffsetRotation);
             m_ShootArm.rotation = Quaternion.RotateTowards(m_ShootArm.rotation, desiredRotation, Time.deltaTime * m_ArmRotationSpeed);
 
-            Debug.DrawRay(m_ShootPoint.position, m_ShootPoint.forward * 1000, Color.green);
+            Debug.DrawRay(position, forward, Color.green);
             if (Input.GetButtonDown("Fire1"))
             {
 
-                Debug.DrawRay(m_ShootPoint.position, bulletTrajectory * 1000, Color.red, 5);
+                Debug.DrawRay(position, forward, Color.red, 5);
 
 
             }
