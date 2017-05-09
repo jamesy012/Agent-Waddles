@@ -6,17 +6,19 @@ public class Player : MonoBehaviour
 {
     Vector3 movement;
     Rigidbody m_rigidBody;
-
+    public float m_jumpForce = 5;
     Quaternion m_proneRotation;
     public float m_speed;
     public bool m_walking;
     public bool m_jumping;
     public bool m_prone;
+    public bool m_grounded;
 
-
+    private CapsuleCollider m_collider;
     // Use this for initialization
     void Start()
     {
+        m_collider = this.GetComponent<CapsuleCollider>();
         m_proneRotation = Quaternion.LookRotation(-this.transform.up);
         m_rigidBody = this.GetComponent<Rigidbody>();
     }
@@ -24,11 +26,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //m_jumping = false;
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space) && m_grounded)
         {
             m_jumping = true;
         }
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             m_prone ^= true;
@@ -41,6 +44,9 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        m_grounded = Physics.Raycast(this.transform.position , Vector3.down,2);
+        Debug.DrawRay(this.transform.position , Vector3.down *2, Color.cyan);
+
         movement.y = 0;
 
         if (movement.sqrMagnitude != 0.0f)
@@ -54,6 +60,13 @@ public class Player : MonoBehaviour
 
             m_walking = false;
         }
+
+        if (m_jumping)
+        {
+            m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+            m_jumping = false;
+        }
+
 
 
 
