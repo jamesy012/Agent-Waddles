@@ -21,10 +21,24 @@ public class OffSholderCam : MonoBehaviour
 
     public bool m_StopCameraInput = false;
     public Vector3 mouseMovement;
-   
 
+    bool isLookAt = true;
 
     bool m_prone = false;
+
+    public bool IsLookAt
+    {
+        get
+        {
+            return isLookAt;
+        }
+
+        set
+        {
+            isLookAt = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -63,8 +77,8 @@ public class OffSholderCam : MonoBehaviour
         mouseMovement.x = Mathf.Clamp(mouseMovement.x, -m_MaxXRot, m_MaxXRot);
 
 
-
-        transform.rotation = Quaternion.Euler(mouseMovement);
+        if (isLookAt)
+            transform.rotation = Quaternion.Euler(mouseMovement);
 
         float distance = m_Distance;
 
