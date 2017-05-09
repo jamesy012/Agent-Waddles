@@ -6,10 +6,12 @@ public class Player : MonoBehaviour
 {
     Vector3 movement;
     Rigidbody m_rigidBody;
-    public float m_jumpForce = 5;
     Quaternion m_proneRotation;
-    public float m_waddleSpeed;
-    public float m_proneSpeed;
+    public float m_jumpForce = 5;
+ 
+    public float m_waddleSpeed = 300;
+    public float m_proneSpeed = 20;
+    public float m_airControl = 10.0f;
     public bool m_walking;
     public bool m_jumping;
     public bool m_prone;
@@ -22,7 +24,7 @@ public class Player : MonoBehaviour
         m_proneRotation = Quaternion.LookRotation(-this.transform.up);
         m_collider = this.GetComponent<CapsuleCollider>();
         m_rigidBody = this.GetComponent<Rigidbody>();
-        
+
     }
 
     // Update is called once per frame
@@ -41,14 +43,14 @@ public class Player : MonoBehaviour
 
 
 
-        
+
     }
 
     private void FixedUpdate()
     {
-       
-        m_grounded = Physics.Raycast(this.transform.position , Vector3.down,1.01f);
-        Debug.DrawRay(this.transform.position , Vector3.down *2, Color.cyan);
+
+        m_grounded = Physics.Raycast(this.transform.position, Vector3.down, 1.01f);
+        Debug.DrawRay(this.transform.position, Vector3.down * 2, Color.cyan);
 
         movement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.forward * Input.GetAxis("Vertical");
         movement.y = 0;
@@ -65,16 +67,19 @@ public class Player : MonoBehaviour
             m_walking = false;
         }
 
+
+        //if (!m_prone)
+        //{
+        //    m_rigidBody.velocity = Vector3.zero;
+        //}
+
         if (m_jumping)
         {
             m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
             m_jumping = false;
         }
 
-        if (m_grounded && !m_prone)
-        {
-            m_rigidBody.velocity = Vector3.zero;
-        }
+
 
 
 
@@ -82,19 +87,30 @@ public class Player : MonoBehaviour
         Vector3 camDir = Camera.main.transform.forward;
         camDir.y = 0;
         this.transform.rotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, Quaternion.LookRotation(camDir), 10);
-       
-        if (m_prone)
+        if (m_grounded)
         {
-            Vector3 proneMovement =  this.transform.forward * Input.GetAxis("Vertical");
-            m_collider.direction = 2;
-            m_rigidBody.AddForce (proneMovement.normalized * m_proneSpeed);
+            
+
+            if (m_prone)
+            {
+                Vector3 proneMovement = this.transform.forward * Input.GetAxis("Vertical");
+                m_collider.direction = 2;
+                m_rigidBody.AddForce(proneMovement.normalized * m_proneSpeed);
+            }
+            else
+            {
+                m_rigidBody.velocity = Vector3.zero;
+                m_collider.direction = 1;
+                m_rigidBody.AddForce(movement.normalized * m_waddleSpeed);
+
+            }
         }
         else
         {
-            m_collider.direction = 1;
-            m_rigidBody.AddForce (movement.normalized * m_waddleSpeed);
-
+            //air control
+            m_rigidBody.AddForce(movement.normalized * m_airControl );
         }
+
 
 
     }
