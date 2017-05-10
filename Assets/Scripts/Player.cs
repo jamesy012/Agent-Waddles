@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float m_waddleSpeed = 300;
     public float m_proneSpeed = 20;
     public float m_airControl = 10.0f;
+    public float m_decelerationRate = 0.5f;
     public bool m_walking;
     public bool m_jumping;
     public bool m_prone;
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour
         else
         {
             //less slippery
-            //m_rigidBody.velocity -= new Vector3(m_rigidBody.velocity.x * 0.9f, 0, m_rigidBody.velocity.z * 0.9f);
+
 
             m_walking = false;
         }
@@ -97,7 +98,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                m_rigidBody.velocity = Vector3.zero;
+                m_rigidBody.velocity -= new Vector3(m_rigidBody.velocity.x * m_decelerationRate, 0, m_rigidBody.velocity.z * m_decelerationRate);
                 m_collider.direction = 1;
                 m_rigidBody.AddForce(movement.normalized * m_waddleSpeed);
 
