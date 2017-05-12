@@ -51,7 +51,8 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         RaycastHit hit;
-        m_grounded = Physics.Raycast(this.transform.position, Vector3.down,out hit, 1.01f);
+        int playerLayer = LayerMask.NameToLayer("Player");
+        m_grounded = Physics.Raycast(this.transform.position, Vector3.down,out hit, 1.01f, ~(1 << playerLayer));
         Debug.DrawRay(this.transform.position, Vector3.down * 2, Color.cyan);
 
         movement = this.transform.right * Input.GetAxis("Horizontal") + this.transform.forward * Input.GetAxis("Vertical");
@@ -70,10 +71,10 @@ public class Player : MonoBehaviour
         }
 
 
-        //if (!m_prone)
-        //{
-        //    m_rigidBody.velocity = Vector3.zero;
-        //}
+        if (m_grounded)
+        {
+            m_currGroundNormal = hit.normal;
+        }
 
         if (m_jumping)
         {
@@ -85,7 +86,8 @@ public class Player : MonoBehaviour
 
         Vector3 camDir = Camera.main.transform.forward;
         camDir.y = 0;
-        this.transform.rotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, Quaternion.LookRotation(camDir), 10);
+        this.transform.rotation = Quaternion.RotateTowards(m_rigidBody.transform.localRotation, Quaternion.LookRotation(camDir) /** Quaternion.FromToRotation(this.transform.up, m_currGroundNormal)*/, 10) ;
+       
         if (m_grounded)
         {
             
